@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Premium fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Animated heart background -->
+<div class="heart-bg"></div>
+
+<!-- HERO -->
+<section class="page active" id="hero">
+  <h2 class="intro">Hi baby</h2>
+
+  <h1 class="headline">Happy Birthday</h1>
+  <!-- change to Happy Valentine -->
+
+  <p class="prompt">
+    Do you want to see your little birthday gift?
+  </p>
+
+  <div class="cta">
+    <button class="primary" onclick="goTo('yes')">YES, PLEASE</button>
+    <button class="secondary" onclick="goTo('no')">NO THANKS</button>
+  </div>
+</section>
+
+<!-- NO THANKS -->
+<section class="page heartbreak" id="no">
+  <div class="break-anim"></div>
+
+  <h1>I promise you will love it</h1>
+
+  <button class="primary" onclick="goTo('hero')">
+    TRY AGAIN
+  </button>
+</section>
+
+<!-- GIFTS -->
+<section class="page" id="yes">
+  <h1 class="headline small">These are for you</h1>
+  <p class="sub">Tap gently</p>
+
+  <div class="mystery-grid">
+    <div class="mystery" onclick="goTo('reasons')"></div>
+    <div class="mystery" onclick="goTo('music')"></div>
+    <div class="mystery" onclick="goTo('letter')"></div>
+  </div>
+
+  <button class="back" onclick="goTo('hero')">Back</button>
+</section>
+
+<!-- REASONS -->
+<section class="page" id="reasons">
+  <h1 class="headline small">Why I Choose You</h1>
+
+  <div class="glass">
+    <ul>
+      <li>The way you understand me without words</li>
+      <li>Your calm presence in my chaos</li>
+      <li>Your laughter, it feels like home</li>
+      <li>Your kindness, even when no one is watching</li>
+      <li>The way you make ordinary days special</li>
+      <li>You — exactly as you are</li>
+    </ul>
+  </div>
+
+  <button class="back" onclick="goTo('yes')">Back</button>
+</section>
+
+<!-- MUSIC -->
+<section class="page" id="music">
+  <h1 class="headline small">This Moment Has a Sound</h1>
+
+  <div class="media-frame">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/XTh2rsVuDWs?si=j3WIiHgLkw49nlp0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <button class="back" onclick="goTo('yes')">Back</button>
+</section>
+
+<!-- LETTER -->
+<section class="page" id="letter">
+  <div class="letter">
+    <h1>My Love</h1>
+
+    <p>
+      Loving you has been the easiest thing my heart has ever done.
+      You walked into my life quietly, yet changed everything completely.
+    </p>
+
+    <p>
+      Today, I celebrate you — your strength, your softness,
+      your beautiful soul.
+    </p>
+
+    <p class="sign">
+      Always yours
+    </p>
+  </div>
+
+  <button class="back" onclick="goTo('yes')">Back</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
