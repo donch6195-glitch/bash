@@ -1,0 +1,181 @@
+:root {
+  --bg-dark: #4a0014;
+  --heart-light: rgba(255, 80, 120, 0.08);
+  --accent: #d6336c;
+  --text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  overflow: hidden;
+}
+
+/* Background hearts */
+.heart-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, var(--heart-light) 0 40px, transparent 41px),
+    radial-gradient(circle at 70% 60%, var(--heart-light) 0 60px, transparent 61px),
+    radial-gradient(circle at 40% 80%, var(--heart-light) 0 50px, transparent 51px);
+  animation: float 20s infinite linear;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-120px); }
+}
+
+/* Pages */
+.page {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  animation: appear 0.8s ease;
+}
+
+.page.active {
+  display: flex;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography */
+.intro {
+  font-size: 2.8rem;
+  font-style: italic;
+}
+
+.headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  letter-spacing: 2px;
+}
+
+.headline.small {
+  font-size: 3rem;
+}
+
+.prompt {
+  max-width: 500px;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+button {
+  padding: 14px 34px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+.back {
+  margin-top: 40px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+/* Mystery gifts */
+.mystery-grid {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.mystery {
+  width: 140px;
+  height: 140px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #7a0020, #520015);
+  box-shadow: 0 0 30px rgba(255,80,120,0.4);
+  animation: pulse 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Reasons glass */
+.glass {
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  max-width: 500px;
+}
+
+/* Media */
+.media-frame iframe {
+  width: 340px;
+  height: 190px;
+  border-radius: 18px;
+  border: none;
+}
+
+/* Letter */
+.letter {
+  background: #fff;
+  color: #222;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 520px;
+  font-family: 'Playfair Display', serif;
+}
+
+.sign {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* Heartbreak */
+.break-anim {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(#ff5c8a, #b3003c);
+  clip-path: polygon(50% 15%, 61% 0, 100% 30%, 75% 60%, 50% 100%, 25% 60%, 0 30%, 39% 0);
+  animation: crack 1.2s infinite alternate;
+  margin-bottom: 20px;
+}
+
+@keyframes crack {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(6deg); }
+}
